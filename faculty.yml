@@ -1,0 +1,29 @@
+server:
+  port: 9100
+spring:
+  application:
+    name: spring-cloud-config-fa
+  datasource:
+    url: jdbc:mysql://localhost:3306/sakila
+    username: root
+    password: mysql
+    platform: mysql
+    initialize: true
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    #database-platform: org.hibernate.dialect.MySQL5Dialect
+    #hibernate.ddl-auto: update
+    #generate-ddl: true
+    show-sql: true
+  jackson:
+    serialization:
+      fail-on-empty-beans: false
+  cloud:
+    config:
+      override-none: true
+eureka:
+    client:
+      serviceUrl:
+         #defaultZone: http://netflix-eureka:8761/eureka #docker
+          defaultZone: http://localhost:8761/eureka
+
